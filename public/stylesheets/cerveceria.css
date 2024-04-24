@@ -339,7 +339,7 @@ nav .enlaces a:hover {
   content: 'Te asesoramos por whatsapp';
 }
 
-#carrito {
+#carrito #cusuario {
   filter: invert();
 
 }
@@ -628,15 +628,24 @@ path {
   --margenes: 30px;
 }
 
-.carrito {
+.carrito .usuario {
   filter: invert();
+}
+
+.usuario:hover,
+.usuario:focus {
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7));
+
+  transition: 0.2s ease;
+
 }
 
 .carrito:hover,
 .carrito:focus {
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7)); 
-  
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7));
+
   transition: 0.2s ease;
 
 }
@@ -668,33 +677,6 @@ path {
   }
 
 }
-
-
-
-/* boton de formulario flotante */
-
-
-/* .btn-flotante { */
-/* font-size: 16px; Cambiar el tamaño de la tipografia */
-/* text-transform: uppercase; Texto en mayusculas */
-/* font-weight: bold; Fuente en negrita o bold */
-/* color: #ffffff; Color del texto */
-/* border-radius: 5px; Borde del boton */
-/* letter-spacing: 2px; Espacio entre letras */
-/* background-color: #E91E63; Color de fondo */
-/* padding: 18px 30px; Relleno del boton */
-/* position: fixed; */
-/* bottom: 40px;
-	right: 40px; */
-/* transition: all 300ms ease 0ms; */
-/* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
-/* z-index: 99; */
-/* } */
-
-/* .btn-flotante:hover {
-	/* background-color: #2c2fa5; Color de fondo al pasar el cursor 
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);} */
 
 
 
@@ -783,19 +765,18 @@ body {
 }
 
 h1 {
-  margin: 0 0 20px 0;
+  margin: 0 0 4px 0;
   font-weight: 300;
   font-size: 28px;
 }
 
-input[type="text"],
-input[type="password"] {
+.input_mensaje {
   display: block;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 4px;
-  width: 220px;
-  height: 32px;
+  width: 320px;
+  height: 15px;
   border: none;
   border-bottom: 1px solid #AAA;
   font-family: 'Roboto', sans-serif;
@@ -804,15 +785,33 @@ input[type="password"] {
   transition: 0.2s ease;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+
+.input_registro {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 4px;
+  width: 320px;
+  height: 45px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+
+
+.input_registro:focus,
+.input_mensaje:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
 }
 
 input[type="submit"] {
-  margin-top: 28px;
+  margin-top: 8px;
   width: 120px;
   height: 32px;
   background: #16a085;
@@ -924,6 +923,7 @@ button.social-signin.google {
     height: 400px;
   }
 
+
   .right .loginwith {
 
     display: block;
@@ -940,3 +940,283 @@ button.social-signin.google {
 }
 
 
+
+
+
+
+
+/* #popupBody{
+
+width: 46%;
+padding: 2%;
+border-radius: 15px;
+box-shadow: 0 0 5px #CCC;
+background: #FFF;
+position: relative;
+margin: 20% auto;
+transition: all 5s ease-in-out;
+} */
+
+
+
+#cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #F00;
+  transition: all 200ms;
+}
+
+#cerrar:hover {
+  color: #F26250;
+  background-color: #fff;
+}
+
+
+
+.modal {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity .6s .9s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
+
+  transition: opacity 500ms;
+  /* visibility: visible; */
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .8s .8s;
+}
+
+.modal__container {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+.left_mensaje {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 720px;
+  height: 400px;
+}
+
+#box-mensaje {
+
+  position: relative;
+  margin: 70px auto;
+  width: 720px;
+  height: 400px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+  #box-mensaje {
+
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  textarea {
+
+    width: 550px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  textarea {
+
+    width: 520px;
+    height: 100px;
+  }
+
+
+  .olvidaste {
+    display: flex;
+    /* justify-content: flex-start; */
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -350px;
+    left: -120px;
+    font-size: 15px;
+  }
+
+
+  .boton_login {
+    /* height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer; */
+    display: flex;
+    position: relative;
+    top: -370px;
+    left: 400px;
+  }
+
+  .boton_enviar_mensaje {
+    /* height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex; */
+    /* justify-content: flex-center; */
+    position: relative;
+    top: -280px;
+    left: 400px;
+
+
+  }
+
+  .aviso {
+    font-size: 11px;
+    color: #0e0e0e;
+    display: flex;
+    left: -530px;
+    justify-content: flex-end;
+    position: relative;
+    /* top: -80px; */
+    bottom: 10px;
+
+  }
+
+
+
+}
+
+
+
+
+
+textarea {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+
+.boton_enviar_mensaje {
+  height: 45px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-center;
+  position: relative;
+  top: -250px;
+  left: 370px;
+
+
+}
+
+.boton_login {
+  height: 45px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  /* justify-content: flex-center;  */
+  position: relative;
+  top: -292px;
+  left: 500px;
+
+
+}
+
+span {
+  color: #ab4493;
+}
+
+.formulario input:focus {
+  outline: 0;
+  border: 1px solid #97d848;
+}
+
+
+.formulario textarea:focus {
+  outline: 0;
+  border: 1px solid #97d848;
+}
+
+.aviso {
+  font-size: 13px;
+  color: #0e0e0e;
+  display: flex;
+  justify-content: flex-end;
+
+  position: relative;
+  top: -40px;
+
+}
+
+.olvidaste {
+  display: flex;
+  /* justify-content: flex-start; */
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -250px;
+  left: -90px;
+}
+
+label {
+  /* display: block; */
+  display: inline-flex;
+  float: center;
+}

@@ -336,30 +336,55 @@
 
 </footer>
 
-<section class="container_registro">
-    <form action="/" method="post">
-        <div id="login-box" id="registro">
-            <div class="left">
-                <h1>Sign up</h1>
+<section class="container_mensaje">
+    <form action="/" method="post" id="formulario_mensaje">
+        <div id="box-mensaje" id="mensaje_web">
+            <div class="left_mensaje">
+                <h1>TU MENSAJE AQUI</h1>
 
-                <input type="text" name="username" placeholder="Username" />
-                <input type="text" name="email" placeholder="E-mail" />
-                <input type="password" name="password" placeholder="Password" />
-                <input type="password" name="password2" placeholder="Retype password" />
+                <p>
+                    <label for="nombre" class="colocar_nombre"><span class="obligatorio">* </span></label>
+                    <input type="text" name="nombre" placeholder="Nombre" class="input_mensaje" />
+                </p>
 
-                <input type="submit"  value="Sign me up" onclick="Mostrar_mensaje_entregado()" />
+                <p>
+                    <label for="apellido" class="colocar_apellido"><span class="obligatorio">*</span></label>
+                    <input type="text" name="apellido" placeholder="Apellido" class="input_mensaje" />
+                </p>
+
+                <p>
+                    <label for="asunto" class="colocar_asunto"><span class="obligatorio">*</span></label>
+                    <input type="text" name="asunto" placeholder="Asunto" class="input_mensaje" />
+                </p>
+
+                <p>
+                    <label for="email" class="colocar_mail"><span class="obligatorio">*</span></label>
+                    {{!-- <input type="email" name="email" placeholder="E-mail" /> --}}
+                    <input type="text" name="mail" placeholder="E-mail" class="input_mensaje" />
+                </p>
+
+
+                <p>
+                    <textarea name="mensaje" id="" cols="85" rows="3" placeholder="Escribe aqui tu mensaje..."
+                        required="obligatorio"></textarea>
+                </p>
+                <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
+
+                <div class="olvidaste">
+                    <a href="#" class=" font-medium text-green-500 hover:text-green-400">Olvidaste tu Contraseña? click
+                        aquí</a>
+                </div>
+
+                <input type="submit" value="Enviar" onclick="Mostrar_mensaje_entregado()"
+                    class="boton_enviar_mensaje" />
+                <input type="submit" value="Login" class="boton_login" />
+
+
+                
             </div>
 
-            <div class="right">
-                {{!-- <span class="loginwith">Sign in with<br />social network</span> --}}
-
-
-                <button class="social-signin facebook">Login con facebook</button>
-                <button class="social-signin twitter">Login con Twitter</button>
-                <button class="social-signin google">Login con Google</button>
-            </div>
-            <div class="or">OR</div>
         </div>
+
     </form>
     <p>{{message}}</p>
 
@@ -368,3 +393,66 @@
 
 </section>
 
+<section class="modal" id="registrarse">
+    {{!-- <section class="modal modal--show" id="registrarse"> --}}
+        <div class="modal_conteiner">
+            <form action="/" method="post" id="formulario_registro">
+                <div id="login-box" id="registro">
+                    <div class="left">
+                        <h1>REGISTRATE</h1>
+
+                        <input type="text" name="username" placeholder="Nombre y Apellido" class="input_registro" />
+                        <input type="email" name="email" placeholder="E-mail" class="input_registro" />
+                        <input type="password" name="password" placeholder="Password" class="input_registro" />
+                        <input type="password" name="password2" placeholder="Repite password" class="input_registro" />
+
+                        <input type="submit" value="LISTO" onclick="Mostrar_mensaje_entregado()" />
+                    </div>
+
+                    <div class="right">
+
+                        <button class="social-signin facebook">Login con facebook</button>
+                        <button class="social-signin twitter">Login con Twitter</button>
+                        <button class="social-signin google">Login con Google</button>
+                    </div>
+                    <div class="or">OR</div>
+                    {{!-- <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a> --}}
+                    <a id="cerrar" href="#" class="modal__close">&times;</a>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    {{!-- <section id="registrarse">
+
+        <div id="popup" class="overlay">
+            <form action="/" method="post">
+                <div id="login-box" id="registro">
+                    <div class="left">
+                        <h1>REGISTRATE PARA NOVEDADES</h1>
+
+                        <input type="text" name="username" placeholder="Username" />
+                        <input type="text" name="email" placeholder="E-mail" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <input type="password" name="password2" placeholder="Retype password" />
+
+                        <input type="submit" value="Sign me up" onclick="Mostrar_mensaje_entregado()" />
+                    </div>
+
+                    <div class="right">
+
+                        <button class="social-signin facebook">Login con facebook</button>
+                        <button class="social-signin twitter">Login con Twitter</button>
+                        <button class="social-signin google">Login con Google</button>
+                    </div>
+                    <div class="or">OR</div>
+                    <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a>
+
+                </div>
+
+
+            </form>
+
+        </div>
+    </section> --}}
