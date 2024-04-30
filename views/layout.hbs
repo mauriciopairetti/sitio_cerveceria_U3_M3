@@ -48,6 +48,7 @@
       <div class="contenedor-nav">
         <div class="logo"> <img src="/images/logo-solo-01.png" alt=""> </div>
         <div class="enlaces" id="enlaces">
+
           <a href="#" id="enlace-inicio" class="btn-header">Inicio</a>
           <a href="#" id="enlace-equipo" class="btn-header">La Empresa</a>
           <a href="#" id="enlace-servicio" class="btn-header">Como se hace?</a>
@@ -55,13 +56,15 @@
           <a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
           <a href="#" id="enlace-compras" class="btn-header">MI Carrito</a><img src="/images/shopping.png" alt="carrito"
             class="carrito">
-          <a href="#" id="enlace-registrarse" class="btn-registro">Registrate</a><img src="/images/usuario.png" alt="usuario"
-            class="usuario">
+          <a href="#" id="enlace-registrarse" class="btn-registro">Iniciar session</a><img src="/images/usuario.png"
+            alt="usuario" class="usuario">
 
         </div>
 
       </div>
-
+      {{#if conocido}}
+      <p class="bienvenido">Bienvenido/a {{username}} <a class="cerra_session" href="/salir"> Cerrar session</a></p>
+      {{/if}}
 
 
 
@@ -121,7 +124,7 @@
 
 
 
-    
+
 
 
     {{{body}}}

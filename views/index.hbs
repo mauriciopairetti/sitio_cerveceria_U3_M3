@@ -294,7 +294,7 @@
 
 
 <footer>
-    <section class="team contenedor" id="contacto">
+    <section class="team_contenedor" id="contacto">
 
 
         <div class="footer contenedor">
@@ -340,6 +340,7 @@
     <form action="/" method="post" id="formulario_mensaje">
         <div id="box-mensaje" id="mensaje_web">
             <div class="left_mensaje">
+
                 <h1>TU MENSAJE AQUI</h1>
 
                 <p>
@@ -377,10 +378,10 @@
 
                 <input type="submit" value="Enviar" onclick="Mostrar_mensaje_entregado()"
                     class="boton_enviar_mensaje" />
-                <input type="submit" value="Login" class="boton_login" />
 
 
-                
+
+
             </div>
 
         </div>
@@ -389,70 +390,54 @@
     <p>{{message}}</p>
 
 
-
-
 </section>
 
 <section class="modal" id="registrarse">
-    {{!-- <section class="modal modal--show" id="registrarse"> --}}
-        <div class="modal_conteiner">
-            <form action="/" method="post" id="formulario_registro">
-                <div id="login-box" id="registro">
-                    <div class="left">
-                        <h1>REGISTRATE</h1>
 
-                        <input type="text" name="username" placeholder="Nombre y Apellido" class="input_registro" />
-                        <input type="email" name="email" placeholder="E-mail" class="input_registro" />
-                        <input type="password" name="password" placeholder="Password" class="input_registro" />
-                        <input type="password" name="password2" placeholder="Repite password" class="input_registro" />
+    <div class="modal_conteiner">
 
-                        <input type="submit" value="LISTO" onclick="Mostrar_mensaje_entregado()" />
-                    </div>
+        
+        {{!-- {{#if conocido}}
+        <p>Bienvenido  {{username}} <a href="/salir"> Salir</a></p>
+        {{/if}} --}}
 
-                    <div class="right">
+        {{#unless conocido}}
+        <p>no te conosco</p>
+        <form action="/ingresar" method="post" id="formulario_registro">
+            <div id="login-box" id="registro">
+                <div class="left">
+                    {{!-- <h1>REGISTRATE</h1> --}}
+                    <h1>{{title}}</h1>
 
-                        <button class="social-signin facebook">Login con facebook</button>
-                        <button class="social-signin twitter">Login con Twitter</button>
-                        <button class="social-signin google">Login con Google</button>
-                    </div>
-                    <div class="or">OR</div>
-                    {{!-- <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a> --}}
-                    <a id="cerrar" href="#" class="modal__close">&times;</a>
 
-                </div>
-            </form>
-        </div>
-    </section>
+                    <input type="text" name="username" placeholder="Nombre y Apellido" class="input_registro" />
+                    <input type="email" name="email" placeholder="E-mail" class="input_registro" />
+                    <input type="password" name="password" placeholder="Password" class="input_registro" />
+                    <input type="password" name="password2" placeholder="Repite password" class="input_registro" />
 
-    {{!-- <section id="registrarse">
-
-        <div id="popup" class="overlay">
-            <form action="/" method="post">
-                <div id="login-box" id="registro">
-                    <div class="left">
-                        <h1>REGISTRATE PARA NOVEDADES</h1>
-
-                        <input type="text" name="username" placeholder="Username" />
-                        <input type="text" name="email" placeholder="E-mail" />
-                        <input type="password" name="password" placeholder="Password" />
-                        <input type="password" name="password2" placeholder="Retype password" />
-
-                        <input type="submit" value="Sign me up" onclick="Mostrar_mensaje_entregado()" />
-                    </div>
-
-                    <div class="right">
-
-                        <button class="social-signin facebook">Login con facebook</button>
-                        <button class="social-signin twitter">Login con Twitter</button>
-                        <button class="social-signin google">Login con Google</button>
-                    </div>
-                    <div class="or">OR</div>
-                    <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a>
+                    {{!-- <input type="submit" value="Login" onclick="Mostrar_mensaje_entregado()"class="boton_login" /> --}}
+                    <button class="boton_logearse">INGRESAR</button>
 
                 </div>
 
+                <div class="right">
 
-            </form>
+                    <button class="social-signin facebook">Login con facebook</button>
+                    <button class="social-signin twitter">Login con Twitter</button>
+                    <button class="social-signin google">Login con Google</button>
 
-        </div>
-    </section> --}}
+                </div>
+
+                <div class="or">OR</div>
+                {{!-- <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a> --}}
+                <a id="cerrar" href="#" class="modal__close">&times;</a>
+
+
+
+            </div>
+        </form>
+        {{/unless}}
+    </div>
+
+
+</section>
