@@ -5,18 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
-
+var session = require('express-session');
 
 
 
 require('dotenv').config();
-var session = require('express-session');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
-var admiRouter = require('./routes/admin/carrito_de_compras');
+var admiRouter =  require('./routes/admin/carrito_de_compras')
 
 
 const { title } = require('process');
@@ -34,30 +33,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(session({
-  secret: 'gousermau123456abcdef',
-  resave: false,
-  saveUninitialized: true
-}));
-
-secured = async (req, res, next) => {
-  try {
-    console.log(req.session.id_usuario);
-    if (req.session.id_usuario) {
-      next();
-    } else {
-      res.redirect('/admin/login');
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
+// app.use(session({
+//   secret: 'gousermau123456abcdef',
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 // se usa para el formulario
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/carrito_de_compra', secured, admiRouter);
+app.use('/admin/carrito_de_compra', admiRouter);
 
 // para ver si el usuario es correcto o no
 app.get('/', function (req, res) {

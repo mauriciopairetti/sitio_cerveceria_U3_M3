@@ -54,17 +54,25 @@
           <a href="#" id="enlace-servicio" class="btn-header">Como se hace?</a>
           <a href="#" id="enlace-trabajo" class="btn-header">Nuestas cervezas</a>
           <a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
-          <a href="#" id="enlace-compras" class="btn-header">MI Carrito</a><img src="/images/shopping.png" alt="carrito"
-            class="carrito">
-          <a href="#" id="enlace-registrarse" class="btn-registro">Iniciar session</a><img src="/images/usuario.png"
-            alt="usuario" class="usuario">
+          <a href="/views/admin/carrito_de_compras.hbs" id="enlace-compras" class="btn-header">MI Carrito <img src="/images/shopping.png" alt="carrito"
+              class="carrito"></a>
+
+          
+          <a href='/views/admin/login.hbs' id="enlace-registrarse" class="btn-registro">Iniciar session <img src="/images/usuario_block.png"
+              alt="usuario" class="usuario"></a>
 
         </div>
 
       </div>
       {{#if conocido}}
-      <p class="bienvenido">Bienvenido/a {{username}} <a class="cerra_session" href="/salir"> Cerrar session</a></p>
-      {{/if}}
+      <p class="bienvenido">Bienvenido/a {{username}}
+        <a href="/views/index.hbs" id="enlace-registrarse" class="cerra_session" >Cerrar session <img
+            src="/images/usuario_unblock.png" alt="usuario" class="usuario"></a>
+
+            
+
+       
+        {{/if}}
 
 
 

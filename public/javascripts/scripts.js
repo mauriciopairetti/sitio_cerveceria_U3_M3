@@ -2,12 +2,14 @@
 
 function Mostrar (){
     var container = document.getElementsByClassName("container_mensaje")[0];  
+    
      
     if (container.style.visibility =="hidden"){
         
         
         container.style.visibility = "visible";
         container.scrollIntoView(true);
+
         
 
 
@@ -17,6 +19,8 @@ function Mostrar (){
         window.scrollTo(0, 3395);
             }
 }
+
+
 
 
 //   function cerrar_formulario() {

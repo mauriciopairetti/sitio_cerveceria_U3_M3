@@ -392,14 +392,9 @@
 
 </section>
 
-<section class="modal" id="registrarse">
+ <section class="modal" id="registrarse">
 
     <div class="modal_conteiner">
-
-        
-        {{!-- {{#if conocido}}
-        <p>Bienvenido  {{username}} <a href="/salir"> Salir</a></p>
-        {{/if}} --}}
 
         {{#unless conocido}}
         <p>no te conosco</p>
@@ -407,20 +402,19 @@
             <div id="login-box" id="registro">
                 <div class="left">
                     {{!-- <h1>REGISTRATE</h1> --}}
-                    <h1>{{title}}</h1>
+                    <h1>INICIAR SESION</h1>
 
 
                     <input type="text" name="username" placeholder="Nombre y Apellido" class="input_registro" />
                     <input type="email" name="email" placeholder="E-mail" class="input_registro" />
                     <input type="password" name="password" placeholder="Password" class="input_registro" />
                     <input type="password" name="password2" placeholder="Repite password" class="input_registro" />
-
-                    {{!-- <input type="submit" value="Login" onclick="Mostrar_mensaje_entregado()"class="boton_login" /> --}}
                     <button class="boton_logearse">INGRESAR</button>
 
                 </div>
 
                 <div class="right">
+                    <h1 class="registrate">REGISTRATE</h1>
 
                     <button class="social-signin facebook">Login con facebook</button>
                     <button class="social-signin twitter">Login con Twitter</button>
@@ -431,13 +425,10 @@
                 <div class="or">OR</div>
                 {{!-- <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a> --}}
                 <a id="cerrar" href="#" class="modal__close">&times;</a>
-
-
-
             </div>
         </form>
         {{/unless}}
     </div>
 
 
-</section>
+</section> 
