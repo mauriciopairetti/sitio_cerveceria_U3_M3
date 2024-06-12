@@ -1,55 +1,27 @@
-<div class="modal_conteiner">
-
-
-    {{!-- {{#if conocido}}
-    <p>Bienvenido {{username}} <a href="/salir"> Salir</a></p>
-    {{/if}} --}}
-
-    {{!-- {{#unless conocido}} --}}
-    {{!-- <p>no te conosco</p> --}}
+<div class="modal_container">
     <form action="/admin/login" method="post" id="formulario_registro">
-        <div id="login-box" id="registro">
+        <div id="login-box" class="registro">
             <div class="left">
-                {{!-- <h1>REGISTRATE</h1> --}}
-                <h1>INICIAR SESION</h1>
-
-
-                <input type="text" name="usuario" placeholder="Nombre y Apellido" class="input_registro" />
-                <input type="email" name="email" placeholder="E-mail" class="input_registro" />
-                <input type="password" name="password" placeholder="Password" class="input_registro" />
-                <input type="password" name="password2" placeholder="Repite password" class="input_registro" />
-
-                {{!-- <input type="submit" value="Login" onclick="Mostrar_mensaje_entregado()" class="boton_login" />
-                --}}
+                <h1>INICIAR SESIÓN</h1>
+                <input type="text" name="usuario" placeholder="Nombre y Apellido" class="input_registro"
+                    aria-describedby="emailHelp" id="usuario" />
+                <input type="password" name="password" placeholder="Password" class="input_registro"
+                    id="password" />
                 <button type="submit" class="boton_logearse">INGRESAR</button>
-
             </div>
-
             <div class="right">
-
-                <button class="social-signin facebook">Login con facebook</button>
+                <h1>REGÍSTRATE</h1>
+                <button class="social-signin facebook">Login con Facebook</button>
                 <button class="social-signin twitter">Login con Twitter</button>
                 <button class="social-signin google">Login con Google</button>
-
             </div>
-
             <div class="or">OR</div>
-            {{!-- <a id="cerrar" href="#" onclick="javascript:cerrar_formulario()">&times;</a> --}}
-            <a id="cerrar" href="#" class="modal__close">&times;</a>
-
-
-
+            <a id="cerrar" href="/" class="modal__close">&times;</a>
         </div>
     </form>
-    {{if error}}
-    <p>usuario incorrecto o osuario</p>
-    
-
-     {{/if}}
-
-
-    {{!-- {{/unless}} --}}
+    <div class="usuario_incorrecto">
+        {{#if error}}
+        <p class="usuario_incorrecto_login">Usuario incorrecto o Contraseña incorrecta</p>
+        {{/if}}
+    </div>
 </div>
-
-
-{{!-- </section> --}}

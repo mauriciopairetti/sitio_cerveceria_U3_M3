@@ -16,7 +16,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
-var admiRouter = require('./routes/admin/carrito_de_compras');
+var adminRouter = require('./routes/admin/carrito_de_compras');
 
 
 const { title } = require('process');
@@ -35,12 +35,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(session({
-  secret: 'gousermau123456abcdef',
+  secret: process.env.SESSION_SECRET || 'gousermau123456abcdef',
   resave: false,
   saveUninitialized: true
 }));
 
-secured = async (req, res, next) => {
+const secured = async (req, res, next) => {
   try {
     console.log(req.session.id_usuario);
     if (req.session.id_usuario) {
@@ -57,12 +57,13 @@ secured = async (req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/carrito_de_compra', secured, admiRouter);
+app.use('/admin/carrito_de_compras', secured, adminRouter);
 
 // para ver si el usuario es correcto o no
 app.get('/', function (req, res) {
   // app.get ('/', indexRouter (req, res){
   var conocido = Boolean(req.session.username);
+  
   res.render('index', {
     title: 'INICIAR SESSION',
     conocido: conocido,

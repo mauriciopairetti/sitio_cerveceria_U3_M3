@@ -130,8 +130,9 @@ nav {
   width: 100%;
   position: fixed;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-  
+
 }
+
 
 .nav1 {
   background: transparent;
@@ -141,12 +142,14 @@ nav {
 }
 
 
+
+
 .nav2 {
   background: var(--fondo);
   height: 100px;
   color: #000;
   z-index: 8000;
-  
+
 }
 
 .contenedor-nav {
@@ -161,12 +164,14 @@ nav {
   z-index: -8000;
 
 }
-.bienvenido{
+
+.bienvenido {
   display: grid;
   position: relative;
   top: -75px;
   left: 1150px;
 }
+
 /* .slide-visible{
     width: 520px;
     position:fixed;
@@ -186,6 +191,7 @@ nav .enlaces a {
 
 }
 
+
 /* nav .enlaces a :hover::after{
     content: "";
     display: block;
@@ -197,18 +203,20 @@ nav .enlaces a {
     border-top-color: #fff;
   }
    */
-nav .enlaces a:hover ,
+nav .enlaces a:hover,
 .cerra_session:hover {
   border-bottom: 3px solid #1b8332;
   transition: 0.3s;
-  
+
 }
+
+
 /* .enlaces a:hover a:not(:hover){
   opacity: .7;
   transform: scale(1.09);
 } */
 
-.cerra_session{
+.cerra_session {
   font-size: 16px;
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5); */
   color: #ffffff;
@@ -217,7 +225,8 @@ nav .enlaces a:hover ,
   top: 1px;
   left: 95px;
 }
-.registrate{
+
+.registrate {
   position: relative;
   top: -58px;
 }
@@ -228,7 +237,8 @@ nav .enlaces a:hover ,
   height: 50%;
 
 }
-.modal_conteiner > p {
+
+.modal_conteiner>p {
   display: grid;
   top: 200px;
 }
@@ -255,7 +265,7 @@ nav .enlaces a:hover ,
   color: #fff;
   overflow: hidden;
   text-align: center;
-  
+
 }
 
 .textos>h1 {
@@ -266,7 +276,7 @@ nav .enlaces a:hover ,
     0 0 1em rgb(97, 240, 62),
     0 0 0.2em rgba(185, 241, 54, 0.986);
   color: rgb(255, 255, 255);
-  
+
 }
 
 .textos>h2 {
@@ -289,6 +299,12 @@ nav .enlaces a:hover ,
   overflow: hidden;
 
 }
+
+
+
+
+
+
 
 .contenedor h3 {
   font-size: var(--titulos);
@@ -496,10 +512,12 @@ footer {
 
   filter: invert();
 }
-.team_contenedor{
-z-index: -8000;
+
+.team_contenedor {
+  z-index: -8000;
 }
-.container_mensaje{
+
+.container_mensaje {
   z-index: -8000;
 }
 
@@ -511,22 +529,25 @@ z-index: -8000;
   height: 75px;
 
 }
-.made_by{
+
+.made_by {
   display: flex;
-  
-  justify-content:center;
+
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 960px;
   gap: 40px;
   z-index: 8000;
 }
-.made_by p{
+
+.made_by p {
   color: #000000;
   font-weight: 520;
   /* text-shadow: #a200ffcc; */
- }
-.logo_made_by_login{
+}
+
+.logo_made_by_login {
   /* width: 180px; */
   height: 80px;
 }
@@ -691,7 +712,7 @@ path {
 .carrito .usuario {
   filter: invert();
   height: 20%;
-  
+
 
 }
 
@@ -712,6 +733,85 @@ path {
   transition: 0.2s ease;
 
 }
+
+/* cerrtio de compras */
+.carrito_de_compras {
+  width: 100%;
+  top:0;
+  position: fixed;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+background: transparent;
+  height: 80px;
+  color: #fff;
+  z-index: 8000;
+
+}
+
+.enlaces_carrito_de_compras {
+  display: block;
+  position: fixed;
+  top: 20px;
+  /* background: #2c3e50; */
+  left: 850px;
+  height: 100%;
+  transition: 0.1s;
+  /* width: 550px; */
+  overflow: hidden;
+}
+
+.enlaces_carrito_de_compras a {
+  display: inline-block;
+  padding: 5px 0;
+  margin-right: 17px;
+  font-size: 17px;
+  font-weight: 300;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+
+}
+.btn-header_carrito_de_compras a:hover,
+.cerra_session_carrito_de_compras  a:hover {
+  border-bottom: 3px solid #1b8332;
+  transition: 0.3s;
+
+}
+.enlaces_carrito_de_compras a:hover,
+.cerra_session:hover {
+  border-bottom: 3px solid #1b8332;
+  transition: 0.3s;
+
+}
+
+
+.textos_carrito_de_compras {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  /* overflow: hidden; */
+  top: 250px;
+  text-align: center;
+
+}
+
+.textos_carrito_de_compras>h1 {
+  font-size: 100px;
+  /* color: rgb(255, 238, 2); */
+  text-shadow:
+    5px 5px 12px rgb(24, 24, 24),
+    0 0 1em rgb(97, 240, 62),
+    0 0 0.2em rgba(185, 241, 54, 0.986);
+  color: rgb(255, 255, 255);
+
+}
+
+
+/* hasta aca */
 
 @media screen and (max-width: 500px) {
   :root {
@@ -810,11 +910,11 @@ body {
   position: absolute;
   /* position: relative; */
   left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  top: 45%;
+  transform: translate(-50%, -50%);
   margin: 2% auto;
   width: 800px;
-  height: 400px;
+  height: 250px;
   background: #FFF;
 
   border-radius: 2px;
@@ -843,11 +943,12 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
+
 /* .boton_logearse:focus, */
 .boton_logearse:hover {
   /* border-bottom: 2px solid #0c6856; */
- /* color: #0c6856; */
- background: #16a085;
+  /* color: #0c6856; */
+  background: #16a085;
   transition: 0.2s ease;
   /* opacity: 0.8; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -859,7 +960,7 @@ body {
   top: 0;
   left: 0;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 25px 0px 0px 40px;
   width: 300px;
   height: 400px;
 }
@@ -870,7 +971,7 @@ h1 {
   font-size: 28px;
 }
 
-.input_mensaje  {
+.input_mensaje {
   display: block;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -883,6 +984,18 @@ h1 {
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
+}
+
+.usuario_incorrecto {
+  position: absolute;
+  left: 540px;
+  color: red;
+  z-index: 8000;
+  text-shadow: maroon;
+  font-weight: bold;
+  top: 395px;
+  padding: 0px 4px 4px 4px;
+  margin: 1px;
 }
 
 
@@ -940,8 +1053,8 @@ input[type="submit"]:active {
 
 .or {
   position: absolute;
-  top: 180px;
-  left: 370px;
+  top: 100px;
+  left: 420px;
   width: 40px;
   height: 40px;
   background: #DDD;
@@ -965,7 +1078,7 @@ input[type="submit"]:active {
   box-sizing: border-box;
   padding: 40px;
   width: 300px;
-  height: 400px;
+  height: 260px;
   background: url('https://goo.gl/YbktSj');
   background-size: cover;
   background-position: center;
@@ -1020,14 +1133,14 @@ button.social-signin.google {
   #login-box {
 
     width: 600px;
-    height: 400px;
+    height: 290px;
   }
 
 
   .right .loginwith {
 
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 28px;
     color: #FFF;
     text-align: center;
@@ -1061,8 +1174,8 @@ transition: all 5s ease-in-out;
 
 #cerrar {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  /* top: 20px; */
+  right: 15px;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
@@ -1165,6 +1278,20 @@ transition: all 5s ease-in-out;
     width: 550px;
     height: 100px;
   }
+
+  .boton_logearse {
+
+    width: 220px;
+    height: 45px;
+
+  }
+
+  .input_registro {
+
+    width: 220px;
+    height: 45px;
+
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -1174,6 +1301,12 @@ transition: all 5s ease-in-out;
     height: 100px;
   }
 
+  .usuario_incorrecto {
+    left: 200px;
+    top: 370px;
+    transition: 0.1s ease;
+
+  }
 
   .olvidaste {
     display: flex;
@@ -1280,14 +1413,15 @@ textarea {
 }
 
 span {
-  color: #ab4493;
+  color: #ffffff;
 }
 
 .formulario input:focus {
   outline: 0;
   border: 1px solid #97d848;
 }
-footer{
+
+footer {
   z-index: -8000;
 }
 
