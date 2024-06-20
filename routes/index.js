@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var carritoModel = require ('../models/carritoModel');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index');
+router.get('/', async function (req, res, next) {
+  var carrito = await carritoModel.getCarrito();
+
+  res.render('index', { 
+    carrito
+  });
 });
 
 router.post('/', async (req, res, next) => {

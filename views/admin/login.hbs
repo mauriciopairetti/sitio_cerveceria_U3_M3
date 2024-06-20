@@ -1,12 +1,11 @@
-<div class="modal_container">
+{{!-- <div class="modal_container">
     <form action="/admin/login" method="post" id="formulario_registro">
         <div id="login-box" class="registro">
             <div class="left">
                 <h1>INICIAR SESIÓN</h1>
                 <input type="text" name="usuario" placeholder="Nombre y Apellido" class="input_registro"
                     aria-describedby="emailHelp" id="usuario" />
-                <input type="password" name="password" placeholder="Password" class="input_registro"
-                    id="password" />
+                <input type="password" name="password" placeholder="Password" class="input_registro" id="password" />
                 <button type="submit" class="boton_logearse">INGRESAR</button>
             </div>
             <div class="right">
@@ -25,3 +24,84 @@
         {{/if}}
     </div>
 </div>
+<div class="modal_container">
+    <form action="/admin/login" method="post" id="formulario_registro">
+        <div id="login-box" class="registro">
+            <div class="left">
+                <h1>INICIAR SESIÓN</h1>
+                <input type="text" name="usuario" placeholder="Nombre y Apellido" class="input_registro"
+                    aria-describedby="emailHelp" id="usuario" />
+                <input type="password" name="password" placeholder="Password" class="input_registro" id="password" />
+                <button type="submit" class="boton_logearse">INGRESAR</button>
+            </div>
+            <div class="right">
+                <h1>REGÍSTRATE</h1>
+                <button class="social-signin facebook">Login con Facebook</button>
+                <button class="social-signin twitter">Login con Twitter</button>
+                <button class="social-signin google">Login con Google</button>
+            </div>
+            <div class="or">OR</div>
+            <a id="cerrar" href="/" class="modal__close">&times;</a>
+        </div>
+    </form>
+    <div class="usuario_incorrecto">
+        {{#if error}}
+        <p class="usuario_incorrecto_login">Usuario incorrecto o Contraseña incorrecta</p>
+        {{/if}}
+    </div>
+</div> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-Z9z+VZ2mR3x8OkeG8E2FlDHkTc7Uy7CMkGlo1Sp0IkHzZuQhZVO5ERw3pEhj2dVu" crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+    <header>
+        <div class="container modal_container">
+            <form action="/admin/login" method="post" id="formulario_registro">
+                <div id="login-box" class="registro">
+                    <div class="left">
+                        <h1>INICIAR SESIÓN</h1>
+                        <input type="text" name="usuario" placeholder="Nombre y Apellido" class="input_registro"
+                            aria-describedby="emailHelp" id="usuario" />
+                        <input type="password" name="password" placeholder="Password" class="input_registro"
+                            id="password" />
+                        <button type="submit" class="boton_logearse">INGRESAR</button>
+                    </div>
+                    <div class="right">
+                        <h1>REGÍSTRATE</h1>
+                        <button type="button" class="social-signin facebook">Login con Facebook</button>
+                        <button type="button" class="social-signin twitter">Login con Twitter</button>
+                        <button type="button" class="social-signin google">Login con Google</button>
+                    </div>
+                    <div class="or">OR</div>
+                    <a id="cerrar" href="/" class="modal__close">&times;</a>
+                </div>
+            </form>
+            <div class="usuario_incorrecto">
+                {{#if error}}
+                <p class="usuario_incorrecto_login">Usuario incorrecto o Contraseña incorrecta</p>
+                {{/if}}
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz4fnFO9gybBogGz1xZ9erw5vP8p7Yt9EK58pNpLvSmDq0K8zP5IlPRA2P" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12yG0wZT60j5ZTQYtudKxxoPq5g16tFAdIGj+M52/tcxD5sK" crossorigin="anonymous">
+            </script>
+    </header>
+</body>
+
+</html>

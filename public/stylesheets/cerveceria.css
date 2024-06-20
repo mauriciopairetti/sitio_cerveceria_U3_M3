@@ -209,7 +209,23 @@ nav .enlaces a:hover,
   transition: 0.3s;
 
 }
+.main_carrito_compras,
+.agregar{
+  position: absolute;
+  
+  
+  width: 850px;
+  height: 50px; 
 
+  left: 50%;  
+  top: 110px;
+ 
+  transform: translate(-50%, -50%);
+  z-index: 9000;
+ 
+  
+
+}
 
 /* .enlaces a:hover a:not(:hover){
   opacity: .7;
@@ -225,6 +241,19 @@ nav .enlaces a:hover,
   top: 1px;
   left: 95px;
 }
+.container{
+  z-index: 9000px;
+  width: 690px;
+
+}
+.btn btn-sm btn-secondary{
+  z-index: 9000px;
+}
+.fa fa-trash{
+  z-index: 9000px;
+}
+
+
 
 .registrate {
   position: relative;
@@ -390,7 +419,7 @@ nav .enlaces a:hover,
   content: 'Te asesoramos por whatsapp';
 }
 
-#carrito #usuario {
+#carrito #usuario  {
   filter: invert();
 
 }
@@ -519,6 +548,7 @@ footer {
 
 .container_mensaje {
   z-index: -8000;
+  
 }
 
 .iconos2 {
@@ -717,8 +747,11 @@ path {
 }
 
 .usuario:hover,
-.usuario:focus {
+.usuario:focus ,
+.carrito:hover,
+.carrito:focus {
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
+
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7));
 
   transition: 0.2s ease;
@@ -733,36 +766,49 @@ path {
   transition: 0.2s ease;
 
 }
+.container modal_container{
+  z-index: 9800;
+}
 
 /* cerrtio de compras */
-.carrito_de_compras {
+.carrito_de_compras,
+.modificar,
+.agregar {
   width: 100%;
   top:0;
   position: fixed;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
 background: transparent;
-  height: 80px;
+  height: 0px;
   color: #fff;
-  z-index: 8000;
+  z-index: 9500;
+  border-radius: 15px;
+  
+  
+
 
 }
 
+
 .enlaces_carrito_de_compras {
-  display: block;
-  position: fixed;
-  top: 20px;
-  /* background: #2c3e50; */
-  left: 850px;
-  height: 100%;
-  transition: 0.1s;
-  /* width: 550px; */
-  overflow: hidden;
+  display: flex;
+    position: fixed;
+    top: 20px;
+    /* background: #2c3e50; */
+    left: 850px;
+    /* height: 100%; */
+    transition: 0.1s;
+    width: 550px;
+    overflow: hidden;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .enlaces_carrito_de_compras a {
   display: inline-block;
   padding: 5px 0;
-  margin-right: 17px;
+  /* margin-right: 25px; */
   font-size: 17px;
   font-weight: 300;
   text-decoration: none;
@@ -771,11 +817,16 @@ background: transparent;
 
 }
 .btn-header_carrito_de_compras a:hover,
-.cerra_session_carrito_de_compras  a:hover {
+.cerra_session_carrito_de_compras  a:hover,
+.btn-header_carrito_de_compras a:hover {
   border-bottom: 3px solid #1b8332;
   transition: 0.3s;
 
 }
+/* .btn-header_carrito_de_compras{
+  height: 20px;
+  width: 20px;
+} */
 .enlaces_carrito_de_compras a:hover,
 .cerra_session:hover {
   border-bottom: 3px solid #1b8332;
@@ -1456,4 +1507,98 @@ label {
   /* display: block; */
   display: inline-flex;
   float: center;
+}
+
+.lisatdo{
+  color: white;
+  font-weight: 500;
+  
+}
+
+.lista-novedades{
+  color:#000;
+}
+
+
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+  z-index: 9000;
+  
+}
+
+.submenu li a{
+	display: block;
+	padding: 5px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+  z-index: 8900;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+.menu li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+ /* .carrito_de_compras{
+	width: 1000px;
+	margin: 30px auto;
+
+}  */
+
+/* .carrito_de_compras ul{
+	list-style: none;
+} */
+
+
+.listado{
+
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: #000;
+  /* box-shadow: #16a085; */
+
+    /* background-color: #16a085;
+    width: 800px;
+    height: 800px; */
+
+}
+.menu > li{
+	position: relative;
+	display: inline-block;
+  z-index: 9000;
+}
+
+.menu > li > a{
+  display: block;
+  /* padding: 15px 20px; */
+  color: #353535;
+  text-decoration: none;
+  z-index: 9000;
+}
+.menu{
+  height: 350px;
+  width: 410px;
+  padding: 0px 0 0 15px;
+  }
+.carrito_de_compras ul{
+	list-style: none;
+}
+.submenu > li > a > img{
+	width: 24px;
+  height: 24px;
+  margin: 12px;
+  margin-left: -20px;
+  z-index: 9000;
 }
