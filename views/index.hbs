@@ -19,10 +19,13 @@
     <script src="/javascripts/filtro.js" defer></script>
 
     <!-- Swiffy Slider JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/808781cc1c.js" crossorigin="anonymous" defer></script>
@@ -33,7 +36,7 @@
 <section class="team contenedor" id="equipo">
     <h3>Nuestro equipo</h3>
     <p class="after">Conozca a nuestra gente de la empresa</p>
-  
+
     <div class="grupocard">
 
         <div
@@ -161,47 +164,27 @@
         <h3>Novedades de Nuestras Cervezas - CRAFT</h3>
         <p class="after">Siempre mejorando para ti</p>
 
-        <div id="novedades" class="row py-4">
-            <div class="col-md-5 offset-md-2 py-3">
-                
-                <ul class="lista-novedades-cervezas">
-                    {{#each carrito_de_compras}}
-                    
-                    <li>
-                        
+        <div class="row">
+            {{#each carrito}}
+            <div class="col-12 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{titulo}}</h3>
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#modal{{ id }}">
+                            <img src="/images/cervezas_carrito/cervezas_gral.png" class="cervezas_img">
                         </a>
-                    </li>
-                    <img src="/images/cervezas_carrito/{{id}}.png"> {{ titulo }}
-                   
-                    {{/each}}
-                </ul>
-            </div>
-            {{#each carrito_de_compras}}
-            {{!-- inicia modal --}}
-            <div class="modal fade" id="modal{{ id }}" data- backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog- scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">{{ titulo}}</h5>
-                            <button type="button" class="close" data- dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <h2>{{ subtitulo }}</h2>
-                            <p>{{ cuerpo }}</p>
-                        </div>
+                        <h5 class="card-title">{{subtitulo}}</h5>
+
+                        <p class="card-text cuerpo">
+                           <div class="cuerpo">{{cuerpo}}</div> 
+                        </p>
+                        <a href="#" target= "_blank" class="btn btn-primary" >mas info +</a>
                     </div>
+                    <p class="card-text">Last updated 3 mins ago</p>
                 </div>
             </div>
-            <!-- fin modal -->
-            {{/each}}
+            {{/each }}
         </div>
-
-
-
     </div>
 </section>
 
